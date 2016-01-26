@@ -67,20 +67,18 @@ function serialize (data) {
   }).join('&')
 }
 
-export function login (data = {userName: '', password: '', redirect: '/'}) {
+export function login (data = {email: '', password: '', redirect: '/'}) {
   return (dispatch, getState) => {
     // Login remote
     dispatch(loginRequest(data))
-    return fetch('http://localhost:63168/oauth2/token', {
+    return fetch('http://pn.quandh.com:80/api/users/login?include=user', {
       method: 'post',
-      credentials: 'include',
       headers: {
         'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
       },
       body: serialize({
-        'grant_type': 'password',
-        'username': data.userName,
+        'email': data.email,
         'password': data.password
       })
     }).then(checkHttpStatus)
@@ -106,23 +104,6 @@ export function login (data = {userName: '', password: '', redirect: '/'}) {
           statusText: error.message
         }))
       })
-
-  // Login Fake
-  // dispatch(loginRequest(data))
-  // if (data.userName === 'admin' && data.password === '123456') {
-  //   let token = '12345689'
-  //   window.localStorage.setItem('token', token)
-  //   // window.localStorage.setItem('isAuthenticated', true)
-  //   dispatch(loginSuccess({token}))
-  //   dispatch(pushPath('/account'))
-  // // dispatch(pushPath(data.redirect))
-  // } else {
-  //   window.localStorage.removeItem('token')
-  //   dispatch(loginFailure({
-  //     status: 403,
-  //     statusText: 'Login Failure!'
-  //   }))
-  // }
   }
 }
 
@@ -135,11 +116,11 @@ export function logoutAndRedirect () {
   }
 }
 
-export function signup (data = {userName: '', password: '', redirect: '/'}) {
+export function signup (data = {email: '', password: '', redirect: '/'}) {
   return (dispatch, getState) => {
     // signup Fake
     dispatch(signupRequest(data))
-    if (data.userName !== '' && data.password !== '') {
+    if (data.email !== '' && data.password !== '') {
       let token = '12345689'
       window.localStorage.setItem('token', token)
       dispatch(signupSuccess({token}))
@@ -158,7 +139,7 @@ export function signup (data = {userName: '', password: '', redirect: '/'}) {
 export function getUsers (token) {
   return (dispatch, state) => {
     dispatch(getUsersRequest(token))
-    return fetch('http://localhost:63168/api/users/', {
+    return fetch('http://pn.quandh.com:80/api/users', {
       credentials: 'include',
       headers: {
         'Authorization': `Bearer ${token}`

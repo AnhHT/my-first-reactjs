@@ -1,0 +1,317 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"au",
+				"authActions"
+			],
+			[
+				"Log",
+				"LoginViewRF"
+			],
+			[
+				"red",
+				"reduxForm"
+			],
+			[
+				"L",
+				"LoginViewRF"
+			],
+			[
+				"re",
+				"reducers"
+			],
+			[
+				"form",
+				"formReducer"
+			],
+			[
+				"fo",
+				"formReducer"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/layouts/CoreLayout/CoreLayout.js",
+			"settings":
+			{
+				"buffer_size": 748,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 188.0,
+		"history":
+		[
+			"subline .",
+			"dir",
+			"dỉ"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/Projects/Reactjs-project/my-first-reactjs",
+		"/E/Projects/Reactjs-project/my-first-reactjs/src",
+		"/E/Projects/Reactjs-project/my-first-reactjs/src/components",
+		"/E/Projects/Reactjs-project/my-first-reactjs/src/layouts",
+		"/E/Projects/Reactjs-project/my-first-reactjs/src/layouts/CoreLayout",
+		"/E/Projects/Reactjs-project/my-first-reactjs/src/redux",
+		"/E/Projects/Reactjs-project/my-first-reactjs/src/redux/modules",
+		"/E/Projects/Reactjs-project/my-first-reactjs/src/redux/utils",
+		"/E/Projects/Reactjs-project/my-first-reactjs/src/views/AboutView",
+		"/E/Projects/Reactjs-project/my-first-reactjs/src/views/AccountView",
+		"/E/Projects/Reactjs-project/my-first-reactjs/src/views/HomeView",
+		"/E/Projects/Reactjs-project/my-first-reactjs/src/views/LoginView",
+		"/E/Projects/Reactjs-project/my-first-reactjs/src/views/NotFoundView",
+		"/E/Projects/Reactjs-project/my-first-reactjs/src/views/SignupView"
+	],
+	"file_history":
+	[
+		"/E/Projects/GoseiHRMS/hrms/WebApp/src/routes/index.js",
+		"/E/Projects/GoseiHRMS/hrms/WebApp/package.json",
+		"/E/Projects/Reactjs-project/my-first-reactjs/src/views/LoginView/LoginViewRF.js",
+		"/E/Projects/Reactjs-project/my-first-reactjs/src/redux/modules/auth.js",
+		"/E/Projects/Reactjs-project/my-first-reactjs/package.json",
+		"/E/Projects/Reactjs-project/my-first-reactjs/src/redux/configureStore.js",
+		"/E/Projects/Reactjs-project/my-first-reactjs/src/views/LoginView/LoginView.js",
+		"/E/Projects/Reactjs-project/my-first-reactjs/src/redux/rootReducer.js",
+		"/E/Projects/Reactjs-project/my-first-reactjs/src/redux/utils/createDevToolsWindow.js",
+		"/E/Projects/Reactjs-project/my-first-reactjs/README.md",
+		"/E/Projects/Panic/loopback-samples/LoopbackGuideApplication/src/com/strongloop/android/loopback/guide/lessons/LessonThreeFragment.java",
+		"/E/Projects/Panic/panic-api/common/models/gcm-token.js",
+		"/E/Projects/Panic/panic-api/common/models/gcm-token.json",
+		"/E/Projects/Panic/panic-api/server/boot/rest-api.js",
+		"/C/Users/AnhHT/Downloads/BrandsCSV190116152354.csv",
+		"/C/Users/AnhHT/Downloads/ManufacturersCSV190116151949.csv",
+		"/C/Users/AnhHT/Downloads/BrandsCSV190116152035.csv",
+		"/C/Users/AnhHT/Downloads/BrandsCSV190116152011.csv",
+		"/C/Users/AnhHT/Downloads/BrandsCSV190116151839.csv",
+		"/C/Users/AnhHT/Downloads/BrandsCSV190116151910.csv",
+		"/C/Users/AnhHT/Downloads/BrandsCSV190116151759.csv",
+		"/C/Users/AnhHT/Downloads/ManufacturersCSV190116151139.csv",
+		"/C/Users/AnhHT/Downloads/ManufacturersCSV190116151604.csv",
+		"/E/Projects/Panic/loopback-samples/LoopbackGuideApplication/src/com/strongloop/android/loopback/guide/SlidePresenterActivity.java",
+		"/E/Projects/Panic/loopback-samples/LoopbackGuideApplication/src/com/strongloop/android/loopback/guide/CoverFragment.java",
+		"/E/Projects/Panic/panic-api/server/server.js",
+		"/E/Projects/Panic/loopback-samples/LoopbackGuideApplication/src/com/strongloop/android/loopback/guide/BackFragment.java",
+		"/E/Projects/Panic/loopback-samples/LoopbackGuideApplication/src/com/strongloop/android/loopback/guide/util/HtmlFragment.java",
+		"/E/Projects/Panic/panic-api/common/models/request.json",
+		"/E/Projects/Panic/panic-api/common/models/user.js",
+		"/E/Projects/Panic/loopback-samples/LoopbackGuideApplication/src/com/strongloop/android/loopback/guide/GuideApplication.java",
+		"/E/Projects/Panic/loopback-samples/LoopbackGuideApplication/AndroidManifest.xml",
+		"/E/Projects/Panic/loopback-samples/LoopbackGuideApplication/src/com/strongloop/android/loopback/guide/lessons/LessonTwoFragment.java",
+		"/E/Projects/Panic/loopback-samples/LoopbackGuideApplication/src/com/strongloop/android/loopback/guide/lessons/LessonOneFragment.java",
+		"/E/Projects/ClaspPj/CLASP/database/20151216/AnhHT_All_Task.sql",
+		"/E/Projects/Panic/panicapp/officerpanicapp/app/src/main/java/com/panic/anhhoang/officerapp/helper/SQLiteHandler.java",
+		"/E/Projects/Panic/panic-api/package.json",
+		"/E/Projects/Panic/panicapp/officerpanicapp/app/src/main/java/com/panic/anhhoang/officerapp/model/OfficerModel.java",
+		"/E/Projects/Panic/SlidingMenu/SlidingMenu/src/info/androidhive/slidingmenu/MainActivity.java",
+		"/E/Projects/ClaspPj/ASP.NET Document Viewer/C#/GroupDocsViewerWebFormsSample/libs/Groupdocs.Viewer.XML",
+		"/E/Projects/ClaspPj/ASP.NET Document Viewer/C#/GroupDocsViewerWebFormsSample/Viewer.aspx.cs",
+		"/E/Projects/ClaspPj/ASP.NET Document Viewer/C#/GroupDocsViewerWebFormsSample/Default.aspx.cs",
+		"/E/Projects/ClaspPj/ASP.NET Document Viewer/C#/GroupDocsViewerWebFormsSample/FileRepository.cs",
+		"/E/Projects/GoseiHRMS/hrms/WebApp/src/components/Authentication/index.js",
+		"/E/Projects/GoseiHRMS/hrms/WebApp/src/redux/modules/index.js",
+		"/E/Projects/GoseiHRMS/hrms/WebApp/CHANGELOG.md",
+		"/E/Projects/GoseiHRMS/hrms/WebApp/src/views/AboutView.js",
+		"/E/Projects/GoseiHRMS/hrms/WebApp/README.md",
+		"/E/React-native/sample/snowflake/package.json",
+		"/E/Projects/GoseiHRMS/hrms/WebApp/src/redux/modules/auth.js",
+		"/E/Projects/GoseiHRMS/hrms/WebApp/src/views/LoginView.js",
+		"/C/Program Files/nodejs/node_modules/npm/package.json",
+		"/E/Projects/GoseiHRMS/hrms/WebApp/src/components/Navigation/index.js",
+		"/E/Projects/GoseiHRMS/hrms/WebApp/src/redux/modules/counter.js",
+		"/E/Projects/GoseiHRMS/hrms/WebApp/src/components/AppBar/style.scss",
+		"/E/Projects/GoseiHRMS/hrms/WebApp/src/components/.gitkeep",
+		"/E/Projects/Game/Sample/cocos2d-x-samples/libs/config.json",
+		"/E/Projects/Game/Sample/cocos2d-x-samples/download-engine.py",
+		"/E/GameEngine/cocos2dx/download-deps.py"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"E:\\Projects\\GoseiHRMS\\hrms\\WebApp\\src"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"isomorphic",
+			"immutable",
+			"better-npm-run",
+			"DeleteDocument",
+			"redux-devtools",
+			"reapp",
+			"Navigation",
+			"CocosZipInstaller"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/layouts/CoreLayout/CoreLayout.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 748,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								656,
+								656
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "react-js.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 274.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
