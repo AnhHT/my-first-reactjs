@@ -52,7 +52,7 @@ class LoginViewRF extends Component {
 								<label>Password</label>
 								<input type="password" {...password}/>
 							</div>
-							<button onClick={handleSubmit}>Login</button>
+							<button onClick={::this.handleSubmit}}>Login</button>
 						</form>
 					</section>
 				</div>

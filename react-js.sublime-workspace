@@ -36,11 +36,11 @@
 	"buffers":
 	[
 		{
-			"file": "src/layouts/CoreLayout/CoreLayout.js",
+			"file": "/E/Projects/GoseiHRMS/hrms/WebApp/src/layouts/CoreLayout/CoreLayout.js",
 			"settings":
 			{
-				"buffer_size": 748,
-				"line_ending": "Unix"
+				"buffer_size": 1113,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -86,16 +86,13 @@
 		"/E/Projects/Reactjs-project/my-first-reactjs/src/layouts/CoreLayout",
 		"/E/Projects/Reactjs-project/my-first-reactjs/src/redux",
 		"/E/Projects/Reactjs-project/my-first-reactjs/src/redux/modules",
-		"/E/Projects/Reactjs-project/my-first-reactjs/src/redux/utils",
-		"/E/Projects/Reactjs-project/my-first-reactjs/src/views/AboutView",
-		"/E/Projects/Reactjs-project/my-first-reactjs/src/views/AccountView",
-		"/E/Projects/Reactjs-project/my-first-reactjs/src/views/HomeView",
-		"/E/Projects/Reactjs-project/my-first-reactjs/src/views/LoginView",
-		"/E/Projects/Reactjs-project/my-first-reactjs/src/views/NotFoundView",
-		"/E/Projects/Reactjs-project/my-first-reactjs/src/views/SignupView"
+		"/E/Projects/Reactjs-project/my-first-reactjs/src/redux/utils"
 	],
 	"file_history":
 	[
+		"/E/Projects/GoseiHRMS/hrms/WebApp/src/layouts/CoreLayout/CoreLayout.js",
+		"/E/Projects/Reactjs-project/my-first-reactjs/src/layouts/CoreLayout/CoreLayout.js",
+		"/E/Projects/GoseiHRMS/hrms/WebApp/src/views/HomeView/HomeView.js",
 		"/E/Projects/GoseiHRMS/hrms/WebApp/src/routes/index.js",
 		"/E/Projects/GoseiHRMS/hrms/WebApp/package.json",
 		"/E/Projects/Reactjs-project/my-first-reactjs/src/views/LoginView/LoginViewRF.js",
@@ -203,24 +200,26 @@
 			[
 				{
 					"buffer": 0,
-					"file": "src/layouts/CoreLayout/CoreLayout.js",
+					"file": "/E/Projects/GoseiHRMS/hrms/WebApp/src/layouts/CoreLayout/CoreLayout.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 748,
+						"buffer_size": 1113,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								656,
-								656
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

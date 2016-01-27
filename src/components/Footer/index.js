@@ -4,7 +4,7 @@ const Footer = (props) => {
   return (
   <footer>
     <p>
-      HRMS © 2015
+      AnhHT © 2015
     </p>
   </footer>
   )

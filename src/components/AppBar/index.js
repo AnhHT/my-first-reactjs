@@ -6,7 +6,7 @@ import style from './style'
 
 const MainAppBar = (props) => (
   <AppBar className={style.appbar} flat>
-    <Link to='/'><h2 className={style.title}>HRMS</h2></Link>
+    <Link to='/'><h2 className={style.title}>My Web App</h2></Link>
     <Navigation activeClassName={style.active} className={style.navigation} isAuthenticated={props.isAuthenticated} logoutAndRedirect={props.logoutAndRedirect} />
   </AppBar>
 )

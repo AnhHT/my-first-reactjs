@@ -1,7 +1,6 @@
 import React from 'react'
 // import { Link } from 'react-router'
 import { connect } from 'react-redux'
-import {Button} from 'react-toolbox/lib/button'
 import classes from './AccountView.scss'
 import { actions as authActions } from '../../redux/modules/auth'
 
@@ -47,9 +46,6 @@ export class AccountView extends React.Component {
           ? <h4>Loading data...</h4>
           : <ul>{this.props.data && this.props.data.map(item => <li key={item.Id}>userName: {item.UserName} - email: {item.Email}</li>)}</ul>
         }
-        <Button onClick={::this.handleLogout} raised primary>
-          Logout
-        </Button>
       </div>
     )
   }
