@@ -1,23 +1,100 @@
-:global {
-  @import 'base';
-  @import 'vendor/normalize';
+@import 'base';
+@import 'vendor/normalize';
 
-  // Some best-practice CSS that's useful for most apps
-  // Just remove them if they're not what you want
-  html {
-    box-sizing: border-box;
+// Some best-practice CSS that's useful for most apps
+// Just remove them if they're not what you want
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: $content-offset;
+  background-color: $color-content;
+  &:nth-child(3) {
+    background-color: darken($color-content, 5%);
+  }
+  > .authors {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    > * {
+      max-width: 32 * $unit;
+      flex: 1 auto;
+      margin: 0 $unit;
+    }
+  }
+  > p {
+    max-width: $content-width;
+    margin-bottom: $content-offset;
+    font-size: 1.8 * $unit;
+    line-height: 1.5;
+    text-align: justify;
+    opacity: .6;
+  }
+  > h2 {
+    margin-bottom: $content-offset;
+    font-size: 2 * $unit;
+  }
+  > h3 {
+    margin-bottom: $content-offset / 2;
+    font-size: 2.4 * $unit;
+    color: $color-primary-dark;
+  }
+}
+
+footer {
+  padding: 2 * $unit 0;
+  color: $color-content;
+  text-align: center;
+  background-color: $color-text;
+  .love {
+    font-size: $font-size-normal;
+    color: $color-accent;
+  }
+  small {
+    color: rgba(255,255,255,.5);
+  }
+}
+
+@media all and (max-width: 768px) {
+  .header {
+    .github {
+      position: absolute;
+    }
   }
 
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+  .content {
+    padding: $content-offset / 2;
+    > .authors {
+      flex-direction: column;
+      > * {
+        margin: $unit 0;
+      }
+    }
+    > p {
+      max-width: 100%;
+    }
   }
 
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
+  .second-content {
+    background-color: transparent;
   }
 }

@@ -10,3 +10,14 @@ For example:
 @import './variables/components'
 @import './themes/default'
 */
+
+@import "~react-toolbox/lib/base";
+@import "~react-toolbox/lib/commons";
+
+$unit: 1rem;
+$color-accent: $color-accent;
+$color-divider: $color-divider;
+$color-content: #fafafa;
+
+$content-offset: 4.8 * $unit;
+$content-width: 740px;
