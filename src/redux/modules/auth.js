@@ -2,7 +2,7 @@ import { createAction, handleActions } from 'redux-actions'
 // import { propertySelector } from '../utils/reselect'
 import Immutable from 'immutable'
 // import jwtDecode from 'jwt-decode'
-import { pushPath } from 'redux-simple-router'
+import { pushPath } from 'react-router-redux'
 // import * as promise from 'es6-promise'
 // promise.polyfill()
 import fetch from 'isomorphic-fetch'

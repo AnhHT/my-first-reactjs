@@ -7,29 +7,26 @@ import Input from 'react-toolbox/lib/input'
 import { actions as authActions } from '../../redux/modules/auth'
 import classes from './LoginView.scss'
 
+export const fields = ['email', 'password']
+const validate = state => {
+  const errors = {}
+  if (!state.email) {
+    errors.email = 'Email is required'
+  }
+
+  if (!state.password) {
+    errors.password = 'Password is required'
+  }
+
+  return errors
+}
+
 const mapStateToProps = (state) => ({
   isAuthenticating: state.auth.isAuthenticating,
   statusText: state.auth.statusText
 })
 
-const form = reduxForm({
-  form: 'login',
-  fields: ['email', 'password'],
-  validate (state) {
-    const errors = {}
-    if (!state.email) {
-      errors.email = 'Email is required'
-    }
-
-    if (!state.password) {
-      errors.password = 'Password is required'
-    }
-
-    return errors
-  }
-})
-
-export class LoginView extends Component {
+class LoginView extends Component {
    static propTypes = {
      error: PropTypes.string,
      login: PropTypes.func.isRequired,
@@ -78,4 +75,10 @@ export class LoginView extends Component {
   }
 }
 
-export default connect(mapStateToProps, authActions)(form(LoginView))
+const formReduce = reduxForm({
+  form: 'loginForm',
+  fields,
+  validate
+})(LoginView)
+
+export default connect(mapStateToProps, authActions)(formReduce)
