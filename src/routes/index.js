@@ -12,7 +12,7 @@ import AuthLayout from 'layouts/AuthLayout/AuthLayout'
 import NotFoundView from 'views/NotFoundView/NotFoundView'
 import HomeView from 'views/HomeView/HomeView'
 import AboutView from 'views/AboutView/AboutView'
-import LoginView from 'views/LoginView/LoginViewRF'
+import LoginView from 'views/LoginView/LoginView'
 import SignupView from 'views/SignupView/SignupView'
 import AccountView from 'views/AccountView/AccountView'
 

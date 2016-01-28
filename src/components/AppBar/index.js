@@ -1,5 +1,5 @@
 import React from 'react'
-import AppBar from 'react-toolbox/lib/app_bar'
+import AppBar from 'react-toolbox/lib/app_bar/AppBar'
 import { Link } from 'react-router'
 import Navigation from '../navigation'
 import style from './style'

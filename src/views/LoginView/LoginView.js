@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {Component, PropTypes} from 'react'
 import { connect } from 'react-redux'
-// import { Link } from 'react-router'
+import { reduxForm } from 'redux-form'
 // import ReactDOM from 'react-dom'
 import {Button} from 'react-toolbox/lib/button'
 import Input from 'react-toolbox/lib/input'
@@ -12,20 +12,37 @@ const mapStateToProps = (state) => ({
   statusText: state.auth.statusText
 })
 
-export class LoginView extends React.Component {
+const form = reduxForm({
+  form: 'login',
+  fields: ['email', 'password'],
+  validate (state) {
+    const errors = {}
+    if (!state.email) {
+      errors.email = 'Email is required'
+    }
+
+    if (!state.password) {
+      errors.password = 'Password is required'
+    }
+
+    return errors
+  }
+})
+
+export class LoginView extends Component {
    static propTypes = {
-     error: React.PropTypes.string,
-     login: React.PropTypes.func.isRequired,
-     isAuthenticating: React.PropTypes.bool,
-     statusText: React.PropTypes.string,
-     location: React.PropTypes.object
+     error: PropTypes.string,
+     login: PropTypes.func.isRequired,
+     isAuthenticating: PropTypes.bool,
+     statusText: PropTypes.string,
+     location: PropTypes.object
    };
 
    constructor (props) {
      super(props)
      const redirectRoute = this.props.location.query.next || '/login'
      this.state = {
-       userName: '',
+       email: '',
        password: '',
        redirectTo: redirectRoute
      }
@@ -33,7 +50,7 @@ export class LoginView extends React.Component {
 
   handleSubmit (evt) {
     evt.preventDefault()
-    this.props.login({userName: this.state.userName, password: this.state.password, redirectTo: this.state.redirectTo})
+    this.props.login({email: this.state.email, password: this.state.password, redirectTo: this.state.redirectTo})
   }
 
   handleChange (e) {
@@ -49,7 +66,7 @@ export class LoginView extends React.Component {
             onSubmit={::this.handleSubmit}
             onChange={::this.handleChange}>
             {this.props.statusText ? <div>{this.props.statusText}</div> : ''}
-            <Input type='text' label='userName' name='userName' maxLength={16} />
+            <Input type='text' label='Email' name='email' maxLength={16} />
             <Input type='password' label='Password' name='password' />
             <Button raised primary>
               Login
@@ -61,4 +78,4 @@ export class LoginView extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, authActions)(LoginView)
+export default connect(mapStateToProps, authActions)(form(LoginView))

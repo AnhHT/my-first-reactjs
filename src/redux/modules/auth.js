@@ -117,22 +117,40 @@ export function logoutAndRedirect () {
 }
 
 export function signup (data = {email: '', password: '', redirect: '/'}) {
+  window.localStorage.removeItem('token')
   return (dispatch, getState) => {
-    // signup Fake
     dispatch(signupRequest(data))
-    if (data.email !== '' && data.password !== '') {
-      let token = '12345689'
-      window.localStorage.setItem('token', token)
-      dispatch(signupSuccess({token}))
-      dispatch(pushPath('/account'))
-    // dispatch(pushPath(data.redirect))
-    } else {
-      window.localStorage.removeItem('token')
-      dispatch(loginFailure({
-        status: 403,
-        statusText: 'Signup Failure!'
-      }))
-    }
+    return fetch('http://pn.quandh.com:80/api/users', {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+      },
+      body: serialize({
+        'email': data.email,
+        'password': data.password
+      })
+    }).then(checkHttpStatus)
+      .then(parseJSON)
+      .then(response => {
+        try {
+          console.log(response)
+          dispatch(signupSuccess())
+          dispatch(pushPath('/login'))
+        } catch (e) {
+          dispatch(signupFailure({
+            status: 403,
+            statusText: 'Signup Failure!'
+          }))
+        }
+      })
+      .catch(error => {
+        window.localStorage.removeItem('token')
+        dispatch(signupFailure({
+          status: 403,
+          statusText: error.message
+        }))
+      })
   }
 }
 
@@ -140,6 +158,7 @@ export function getUsers (token) {
   return (dispatch, state) => {
     dispatch(getUsersRequest(token))
     return fetch('http://pn.quandh.com:80/api/users', {
+      method: 'get',
       credentials: 'include',
       headers: {
         'Authorization': `Bearer ${token}`
@@ -173,8 +192,7 @@ export default handleActions({
       'isAuthenticating': false,
       'isAuthenticated': true,
       'token': payload.access_token,
-      // 'userName': payload.userName,
-      'userName': 'admin',
+      'userName': payload.fullName,
       'statusText': 'You have been successfully logged in.'
     })
   },
@@ -201,23 +219,18 @@ export default handleActions({
       'statusText': null
     })
   },
-  [AUTH_SIGNUP_SUCCESS]: (state, {payload}) => {
+  [AUTH_SIGNUP_SUCCESS]: (state, payload) => {
     return Object.assign({}, state, {
       'isAuthenticating': false,
-      'isAuthenticated': true,
-      'token': payload.access_token,
-      // 'userName': jwtDecode(payload.token).userName,
-      'userName': 'admin',
-      'statusText': 'You have been successfully logged in.'
+      'isAuthenticated': false,
+      'statusText': 'Register successfully'
     })
   },
   [AUTH_SIGNUP_FAILURE]: (state, {payload}) => {
     return Object.assign({}, state, {
       'isAuthenticating': false,
       'isAuthenticated': false,
-      'token': null,
-      'userName': null,
-      'statusText': `Authentication Error: ${payload.status} ${payload.statusText}`
+      'statusText': `Signup Error: ${payload.status} ${payload.statusText}`
     })
   },
   [FETCH_USERS_DATA_REQUEST]: (state, {payload}) => {
