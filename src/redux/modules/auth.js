@@ -86,7 +86,8 @@ export function login (data = {email: '', password: '', redirect: '/'}) {
       .then(response => {
         try {
           // let decoded = jwtDecode(response.access_token)
-          window.localStorage.setItem('token', response.access_token)
+          window.localStorage.setItem('token', response.id)
+          window.localStorage.setItem('userId', response.userId)
           dispatch(loginSuccess(response))
           // dispatch(pushPath(data.redirect))
           dispatch(pushPath('/account'))
@@ -155,9 +156,10 @@ export function signup (data = {email: '', password: '', redirect: '/'}) {
 }
 
 export function getUsers (token) {
+  const userId = window.localStorage.getItem('userId')
   return (dispatch, state) => {
     dispatch(getUsersRequest(token))
-    return fetch('http://pn.quandh.com:80/api/users', {
+    return fetch('http://pn.quandh.com:80/api/users/'+userId, {
       method: 'get',
       credentials: 'include',
       headers: {
@@ -191,8 +193,8 @@ export default handleActions({
     return Object.assign({}, state, {
       'isAuthenticating': false,
       'isAuthenticated': true,
-      'token': payload.access_token,
-      'userName': payload.fullName,
+      'token': payload.id,
+      'userName': payload.user.fullName,
       'statusText': 'You have been successfully logged in.'
     })
   },

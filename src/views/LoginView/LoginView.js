@@ -7,23 +7,26 @@ import Input from 'react-toolbox/lib/input'
 import { actions as authActions } from '../../redux/modules/auth'
 import classes from './LoginView.scss'
 
-export const fields = ['email', 'password']
-const validate = state => {
-  const errors = {}
-  if (!state.email) {
-    errors.email = 'Email is required'
-  }
-
-  if (!state.password) {
-    errors.password = 'Password is required'
-  }
-
-  return errors
-}
-
 const mapStateToProps = (state) => ({
   isAuthenticating: state.auth.isAuthenticating,
   statusText: state.auth.statusText
+})
+
+const form = reduxForm({
+  form: 'loginForm',
+  fields: ['email', 'password'],
+  validate (state) {
+    let errors = {}
+    if (!state.email) {
+      errors.email = 'Email is required'
+    }
+
+    if (!state.password) {
+      errors.password = 'Password is required'
+    }
+
+    return errors
+  }
 })
 
 class LoginView extends Component {
@@ -32,7 +35,8 @@ class LoginView extends Component {
      login: PropTypes.func.isRequired,
      isAuthenticating: PropTypes.bool,
      statusText: PropTypes.string,
-     location: PropTypes.object
+     location: PropTypes.object,
+     initializeForm: PropTypes.func
    };
 
    constructor (props) {
@@ -44,6 +48,13 @@ class LoginView extends Component {
        redirectTo: redirectRoute
      }
    }
+
+  componentWillMount () {
+    this.props.initializeForm({
+      email: null,
+      password: null
+    })
+  }
 
   handleSubmit (evt) {
     evt.preventDefault()
@@ -63,7 +74,7 @@ class LoginView extends Component {
             onSubmit={::this.handleSubmit}
             onChange={::this.handleChange}>
             {this.props.statusText ? <div>{this.props.statusText}</div> : ''}
-            <Input type='text' label='Email' name='email' maxLength={16} />
+            <Input type='text' label='Email' name='email' />
             <Input type='password' label='Password' name='password' />
             <Button raised primary>
               Login
@@ -75,10 +86,4 @@ class LoginView extends Component {
   }
 }
 
-const formReduce = reduxForm({
-  form: 'loginForm',
-  fields,
-  validate
-})(LoginView)
-
-export default connect(mapStateToProps, authActions)(formReduce)
+export default connect(mapStateToProps, authActions)(form(LoginView))
