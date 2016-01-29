@@ -159,7 +159,7 @@ export function getUsers (token) {
   const userId = window.localStorage.getItem('userId')
   return (dispatch, state) => {
     dispatch(getUsersRequest(token))
-    return fetch('http://pn.quandh.com:80/api/users/'+userId, {
+    return fetch('http://pn.quandh.com:80/api/users/' + userId, {
       method: 'get',
       credentials: 'include',
       headers: {

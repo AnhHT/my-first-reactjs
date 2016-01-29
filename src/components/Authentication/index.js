@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { replacePath } from 'redux-simple-router'
+import { replacePath } from 'react-router-redux'
 
 export function requireAuthentication (Component) {
   class AuthenticateComponent extends React.Component {
