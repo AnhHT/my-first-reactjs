@@ -21,7 +21,7 @@ export default (
   <Route path='/' component={CoreLayout}>
     <IndexRoute component={HomeView} />
     <Route path='/about' component={AboutView} />
-	<Route path='/account' component={requireAuthentication(AccountView)} />
+    <Route path='/account' component={requireAuthentication(AccountView)} />
   </Route>
   <Route path='/auth' component={AuthLayout}>
 	<Route path='/login' component={LoginView} />

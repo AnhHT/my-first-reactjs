@@ -16,7 +16,7 @@ export class AccountView extends React.Component {
   static propTypes = {
     token: React.PropTypes.string,
     isFetching: React.PropTypes.bool,
-    data: React.PropTypes.array,
+    data: React.PropTypes.Object,
     getUsers: React.PropTypes.func,
     logoutAndRedirect: React.PropTypes.func
   };
@@ -44,7 +44,7 @@ export class AccountView extends React.Component {
         {
           this.props.isFetching === true
           ? <h4>Loading data...</h4>
-          : <ul>{this.props.data && this.props.data.map(item => <li key={item.Id}>userName: {item.UserName} - email: {item.Email}</li>)}</ul>
+          : <h4>{this.props.data.fullName} - {this.props.data.email}</h4>
         }
       </div>
     )

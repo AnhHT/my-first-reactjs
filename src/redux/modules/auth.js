@@ -2,7 +2,7 @@ import { createAction, handleActions } from 'redux-actions'
 // import { propertySelector } from '../utils/reselect'
 import Immutable from 'immutable'
 // import jwtDecode from 'jwt-decode'
-import { pushPath } from 'react-router-redux'
+import { push } from 'react-router-redux'
 // import * as promise from 'es6-promise'
 // promise.polyfill()
 import fetch from 'isomorphic-fetch'
@@ -58,6 +58,7 @@ function checkHttpStatus (response) {
 }
 
 function parseJSON (response) {
+  console.log(response)
   return response.json()
 }
 
@@ -85,12 +86,11 @@ export function login (data = {email: '', password: '', redirect: '/'}) {
       .then(parseJSON)
       .then(response => {
         try {
-          // let decoded = jwtDecode(response.access_token)
           window.localStorage.setItem('token', response.id)
           window.localStorage.setItem('userId', response.userId)
           dispatch(loginSuccess(response))
-          // dispatch(pushPath(data.redirect))
-          dispatch(pushPath('/account'))
+          console.log('PushPath account')
+          dispatch(push('/account'))
         } catch (e) {
           dispatch(loginFailure({
             status: 403,
@@ -100,6 +100,7 @@ export function login (data = {email: '', password: '', redirect: '/'}) {
       })
       .catch(error => {
         window.localStorage.removeItem('token')
+        window.localStorage.removeItem('userId')
         dispatch(loginFailure({
           status: 401,
           statusText: error.message
@@ -110,10 +111,12 @@ export function login (data = {email: '', password: '', redirect: '/'}) {
 
 export function logoutAndRedirect () {
   window.localStorage.removeItem('token')
+  window.localStorage.removeItem('userId')
   return (dispatch, getState) => {
     window.localStorage.removeItem('token')
+    window.localStorage.removeItem('userId')
     dispatch(logoutSuccess())
-    dispatch(pushPath('/login'))
+    dispatch(push('/login'))
   }
 }
 
@@ -137,7 +140,7 @@ export function signup (data = {email: '', password: '', redirect: '/'}) {
         try {
           console.log(response)
           dispatch(signupSuccess())
-          dispatch(pushPath('/login'))
+          dispatch(push('/login'))
         } catch (e) {
           dispatch(signupFailure({
             status: 403,
@@ -157,13 +160,14 @@ export function signup (data = {email: '', password: '', redirect: '/'}) {
 
 export function getUsers (token) {
   const userId = window.localStorage.getItem('userId')
+  console.log(userId)
   return (dispatch, state) => {
     dispatch(getUsersRequest(token))
     return fetch('http://pn.quandh.com:80/api/users/' + userId, {
       method: 'get',
       credentials: 'include',
       headers: {
-        'Authorization': `Bearer ${token}`
+        'Authorization': token
       }
     })
       .then(checkHttpStatus)
