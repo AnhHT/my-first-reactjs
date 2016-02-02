@@ -13,9 +13,9 @@ const history = useRouterHistory(createHistory)(historyConfig)
 const initialState = window.__INITIAL_STATE__
 const store = configureStore({ initialState, history })
 
-let token = window.localStorage.getItem('token')
-if (token !== null) {
-  store.dispatch(loginSuccess({access_token: token}))
+let userInfoObj = JSON.parse(window.localStorage.getItem('userInfo'))
+if (userInfoObj !== null) {
+  store.dispatch(loginSuccess(userInfoObj))
 }
 
 // Render the React application to the DOM

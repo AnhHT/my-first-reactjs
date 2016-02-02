@@ -40,12 +40,7 @@ export class AccountView extends React.Component {
       <div className={classes.container}>
         <h1>Account</h1>
         <p>Welcome to your account.</p>
-        <p>List users</p>
-        {
-          this.props.isFetching === true
-          ? <h4>Loading data...</h4>
-          : <h4>{this.props.data.fullName} - {this.props.data.email}</h4>
-        }
+        <h4>{this.props.data.user.fullName} - {this.props.data.user.email}</h4>
       </div>
     )
   }

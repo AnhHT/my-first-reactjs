@@ -88,8 +88,8 @@ export function login (data = {email: '', password: '', redirect: '/'}) {
         try {
           window.localStorage.setItem('token', response.id)
           window.localStorage.setItem('userId', response.userId)
+          window.localStorage.setItem('userInfo', JSON.stringify(response))
           dispatch(loginSuccess(response))
-          console.log('PushPath account')
           dispatch(push('/account'))
         } catch (e) {
           dispatch(loginFailure({
@@ -122,6 +122,7 @@ export function logoutAndRedirect () {
 
 export function signup (data = {email: '', password: '', redirect: '/'}) {
   window.localStorage.removeItem('token')
+  window.localStorage.removeItem('userId')
   return (dispatch, getState) => {
     dispatch(signupRequest(data))
     return fetch('http://pn.quandh.com:80/api/users', {
@@ -138,7 +139,6 @@ export function signup (data = {email: '', password: '', redirect: '/'}) {
       .then(parseJSON)
       .then(response => {
         try {
-          console.log(response)
           dispatch(signupSuccess())
           dispatch(push('/login'))
         } catch (e) {
@@ -149,7 +149,6 @@ export function signup (data = {email: '', password: '', redirect: '/'}) {
         }
       })
       .catch(error => {
-        window.localStorage.removeItem('token')
         dispatch(signupFailure({
           status: 403,
           statusText: error.message
@@ -159,11 +158,11 @@ export function signup (data = {email: '', password: '', redirect: '/'}) {
 }
 
 export function getUsers (token) {
-  const userId = window.localStorage.getItem('userId')
-  console.log(userId)
+  // const userId = window.localStorage.getItem('userId')
+  const userInfoObj = JSON.parse(window.localStorage.getItem('userInfo'))
   return (dispatch, state) => {
-    dispatch(getUsersRequest(token))
-    return fetch('http://pn.quandh.com:80/api/users/' + userId, {
+    dispatch(getUsersSuccess(userInfoObj))
+    /* return fetch('http://pn.quandh.com:80/api/users/' + userId, {
       method: 'get',
       credentials: 'include',
       headers: {
@@ -179,7 +178,7 @@ export function getUsers (token) {
         if (error.response.status === 401) {
           dispatch(getUsersFailure(error))
         }
-      })
+      })*/
   }
 }
 
