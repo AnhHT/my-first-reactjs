@@ -11,8 +11,8 @@ For example:
 @import './themes/default'
 */
 
-@import "~react-toolbox/lib/base";
-@import "~react-toolbox/lib/commons";
+@import '././node_modules/react-toolbox/lib/base';
+@import '././node_modules/react-toolbox/lib/commons';
 
 $unit: 1rem;
 $color-accent: $color-accent;

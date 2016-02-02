@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react'
 import { connect } from 'react-redux'
 import { reduxForm } from 'redux-form'
 // import ReactDOM from 'react-dom'
-import {Button} from 'react-toolbox/lib/button'
+import Button from 'react-toolbox/lib/button'
 import Input from 'react-toolbox/lib/input'
 import { actions as authActions } from '../../redux/modules/auth'
 import classes from './LoginView.scss'
@@ -76,9 +76,7 @@ class LoginView extends Component {
             {this.props.statusText ? <div>{this.props.statusText}</div> : ''}
             <Input type='text' label='Email' name='email' />
             <Input type='password' label='Password' name='password' />
-            <Button raised primary>
-              Login
-            </Button>
+            <Button label='Login' raised primary />
           </form>
         </section>
       </div>

@@ -16,7 +16,7 @@ const webpackConfig = {
   devtool: config.compiler_devtool,
   resolve: {
     root: paths.base(config.dir_client),
-    extensions: ['', '.js', '.jsx', '.scss', '.css']
+    extensions: ['', '.js', '.jsx', '.scss']
   },
   module: {}
 }
@@ -133,45 +133,11 @@ const cssLoader = !config.compiler_css_modules
 
 webpackConfig.module.loaders.push({
   test: /\.scss$/,
-  include: /src/,
   loaders: [
     'style',
     cssLoader,
     'postcss',
     'sass'
-  ]
-})
-
-webpackConfig.module.loaders.push({
-  test: /\.css$/,
-  include: /src/,
-  loaders: [
-    'style',
-    cssLoader,
-    'postcss'
-  ]
-})
-
-// Don't treat global SCSS as modules
-webpackConfig.module.loaders.push({
-  test: /\.scss$/,
-  exclude: /src/,
-  loaders: [
-    'style',
-    'css?sourceMap',
-    'postcss',
-    'sass'
-  ]
-})
-
-// Don't treat global, third-party CSS as modules
-webpackConfig.module.loaders.push({
-  test: /\.css$/,
-  exclude: /src/,
-  loaders: [
-    'style',
-    'css?sourceMap',
-    'postcss'
   ]
 })
 
