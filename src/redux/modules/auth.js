@@ -101,6 +101,7 @@ export function login (data = {email: '', password: '', redirect: '/'}) {
       .catch(error => {
         window.localStorage.removeItem('token')
         window.localStorage.removeItem('userId')
+        window.localStorage.removeItem('userInfo')
         dispatch(loginFailure({
           status: 401,
           statusText: error.message
@@ -110,20 +111,20 @@ export function login (data = {email: '', password: '', redirect: '/'}) {
 }
 
 export function logoutAndRedirect () {
-  window.localStorage.removeItem('token')
-  window.localStorage.removeItem('userId')
   return (dispatch, getState) => {
     window.localStorage.removeItem('token')
     window.localStorage.removeItem('userId')
+    window.localStorage.removeItem('userInfo')
     dispatch(logoutSuccess())
     dispatch(push('/login'))
   }
 }
 
 export function signup (data = {email: '', password: '', redirect: '/'}) {
-  window.localStorage.removeItem('token')
-  window.localStorage.removeItem('userId')
   return (dispatch, getState) => {
+    window.localStorage.removeItem('token')
+    window.localStorage.removeItem('userId')
+    window.localStorage.removeItem('userInfo')
     dispatch(signupRequest(data))
     return fetch('http://pn.quandh.com:80/api/users', {
       method: 'post',
@@ -157,28 +158,11 @@ export function signup (data = {email: '', password: '', redirect: '/'}) {
   }
 }
 
-export function getUsers (token) {
+export function getUsers () {
   // const userId = window.localStorage.getItem('userId')
   const userInfoObj = JSON.parse(window.localStorage.getItem('userInfo'))
   return (dispatch, state) => {
     dispatch(getUsersSuccess(userInfoObj))
-    /* return fetch('http://pn.quandh.com:80/api/users/' + userId, {
-      method: 'get',
-      credentials: 'include',
-      headers: {
-        'Authorization': token
-      }
-    })
-      .then(checkHttpStatus)
-      .then(parseJSON)
-      .then(response => {
-        dispatch(getUsersSuccess(response))
-      })
-      .catch(error => {
-        if (error.response.status === 401) {
-          dispatch(getUsersFailure(error))
-        }
-      })*/
   }
 }
 

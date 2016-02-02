@@ -26,8 +26,7 @@ export class AccountView extends React.Component {
   }
 
   fetchData () {
-    let token = this.props.token
-    this.props.getUsers(token)
+    this.props.getUsers()
   }
 
   handleLogout (evt) {
