@@ -31,7 +31,7 @@ export const loginSuccess = createAction(AUTH_LOGIN_SUCCESS, (data) => data)
 export const loginFailure = createAction(AUTH_LOGIN_FAILURE, (err) => err)
 export const logoutSuccess = createAction(AUTH_LOGOUT_SUCCESS)
 export const signupRequest = createAction(AUTH_SIGNUP_REQUEST, (data) => data)
-export const signupSuccess = createAction(AUTH_SIGNUP_SUCCESS, ({ token }) => ({token}))
+export const signupSuccess = createAction(AUTH_SIGNUP_SUCCESS)
 export const signupFailure = createAction(AUTH_SIGNUP_FAILURE, (err) => err)
 export const getUsersRequest = createAction(FETCH_USERS_DATA_REQUEST, (data) => data)
 export const getUsersSuccess = createAction(RECEIVE_USERS_DATA_SUCCESS, (data) => data)
@@ -143,6 +143,7 @@ export function signup (data = {email: '', password: '', redirect: '/'}) {
           dispatch(signupSuccess())
           dispatch(push('/login'))
         } catch (e) {
+          console.log(e)
           dispatch(signupFailure({
             status: 403,
             statusText: 'Signup Failure!'

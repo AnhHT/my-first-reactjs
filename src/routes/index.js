@@ -19,7 +19,7 @@ import AccountView from 'views/AccountView/AccountView'
 export default (
 <Route>
   <Route path='/' component={CoreLayout}>
-    <IndexRoute component={HomeView} />
+    <IndexRoute component={requireAuthentication(HomeView)} />
     <Route path='/about' component={AboutView} />
     <Route path='/account' component={requireAuthentication(AccountView)} />
   </Route>

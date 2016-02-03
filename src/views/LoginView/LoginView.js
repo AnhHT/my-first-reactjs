@@ -5,6 +5,7 @@ import { reduxForm } from 'redux-form'
 import Button from 'react-toolbox/lib/button'
 import Input from 'react-toolbox/lib/input'
 import { actions as authActions } from '../../redux/modules/auth'
+import { push } from 'react-router-redux'
 import classes from './LoginView.scss'
 
 const mapStateToProps = (state) => ({
@@ -36,7 +37,8 @@ class LoginView extends Component {
      isAuthenticating: PropTypes.bool,
      statusText: PropTypes.string,
      location: PropTypes.object,
-     initializeForm: PropTypes.func
+     initializeForm: PropTypes.func,
+     dispatch: PropTypes.func.isRequired
    };
 
    constructor (props) {
@@ -65,6 +67,11 @@ class LoginView extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
+  handleRegister (e) {
+    e.preventDefault()
+    this.props.dispatch(push('/signup'))
+  }
+
   render () {
     return (
       <div className={classes.container}>
@@ -77,6 +84,7 @@ class LoginView extends Component {
             <Input type='text' label='Email' name='email' />
             <Input type='password' label='Password' name='password' />
             <Button label='Login' raised primary />
+            <Button label='Register' raised accent onClick={::this.handleRegister} />
           </form>
         </section>
       </div>

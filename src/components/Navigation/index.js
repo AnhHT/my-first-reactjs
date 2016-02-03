@@ -19,8 +19,7 @@ Navigation.propTypes = {
   activeClassName: React.PropTypes.string,
   className: React.PropTypes.string,
   isAuthenticated: React.PropTypes.bool,
-  logoutAndRedirect: React.PropTypes.func,
-  getUsers: React.PropTypes.func
+  logoutAndRedirect: React.PropTypes.func
 }
 
 Navigation.defaultProps = {

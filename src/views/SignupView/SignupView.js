@@ -67,7 +67,7 @@ export class SignupView extends Component {
             onSubmit={::this.handleSubmit}
             onChange={::this.handleChange}>
             {this.props.statusText ? <div>{this.props.statusText}</div> : ''}
-            <Input type='text' label='Email' name='email' maxLength={16} />
+            <Input type='text' label='Email' name='email' />
             <Input type='password' label='Password' name='password' />
             <Button raised primary>
               Signup
