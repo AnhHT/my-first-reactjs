@@ -29,9 +29,9 @@ export const RECEIVE_USERS_DATA_FAILURE = 'RECEIVE_USERS_DATA_FAILURE'
 export const loginRequest = createAction(AUTH_LOGIN_REQUEST, (data) => data)
 export const loginSuccess = createAction(AUTH_LOGIN_SUCCESS, (data) => data)
 export const loginFailure = createAction(AUTH_LOGIN_FAILURE, (err) => err)
-export const logoutSuccess = createAction(AUTH_LOGOUT_SUCCESS)
+export const logoutSuccess = createAction(AUTH_LOGOUT_SUCCESS, (data) => data)
 export const signupRequest = createAction(AUTH_SIGNUP_REQUEST, (data) => data)
-export const signupSuccess = createAction(AUTH_SIGNUP_SUCCESS)
+export const signupSuccess = createAction(AUTH_SIGNUP_SUCCESS, (data) => data)
 export const signupFailure = createAction(AUTH_SIGNUP_FAILURE, (err) => err)
 export const getUsersRequest = createAction(FETCH_USERS_DATA_REQUEST, (data) => data)
 export const getUsersSuccess = createAction(RECEIVE_USERS_DATA_SUCCESS, (data) => data)
@@ -86,10 +86,9 @@ export function login (data = {email: '', password: '', redirect: '/'}) {
       .then(parseJSON)
       .then(response => {
         try {
-          window.localStorage.setItem('token', response.id)
-          window.localStorage.setItem('userId', response.userId)
-          window.localStorage.setItem('userInfo', JSON.stringify(response))
-          dispatch(loginSuccess(response))
+          let userInfo = JSON.stringify(response)
+          window.localStorage.setItem('userInfo', userInfo)
+          dispatch(loginSuccess(userInfo))
           dispatch(push('/account'))
         } catch (e) {
           dispatch(loginFailure({
@@ -99,8 +98,6 @@ export function login (data = {email: '', password: '', redirect: '/'}) {
         }
       })
       .catch(error => {
-        window.localStorage.removeItem('token')
-        window.localStorage.removeItem('userId')
         window.localStorage.removeItem('userInfo')
         dispatch(loginFailure({
           status: 401,
@@ -112,8 +109,6 @@ export function login (data = {email: '', password: '', redirect: '/'}) {
 
 export function logoutAndRedirect () {
   return (dispatch, getState) => {
-    window.localStorage.removeItem('token')
-    window.localStorage.removeItem('userId')
     window.localStorage.removeItem('userInfo')
     dispatch(logoutSuccess())
     dispatch(push('/login'))
@@ -122,8 +117,6 @@ export function logoutAndRedirect () {
 
 export function signup (data = {email: '', password: '', redirect: '/'}) {
   return (dispatch, getState) => {
-    window.localStorage.removeItem('token')
-    window.localStorage.removeItem('userId')
     window.localStorage.removeItem('userInfo')
     dispatch(signupRequest(data))
     return fetch('http://pn.quandh.com:80/api/users', {
@@ -134,13 +127,16 @@ export function signup (data = {email: '', password: '', redirect: '/'}) {
       },
       body: serialize({
         'email': data.email,
-        'password': data.password
+        'password': data.password,
+        'fullName': data.fullName,
+        'dob': data.dob,
+        'pin': data.pin
       })
     }).then(checkHttpStatus)
       .then(parseJSON)
       .then(response => {
         try {
-          dispatch(signupSuccess())
+          dispatch(signupSuccess(data))
           dispatch(push('/login'))
         } catch (e) {
           console.log(e)
@@ -181,8 +177,6 @@ export default handleActions({
     return Object.assign({}, state, {
       'isAuthenticating': false,
       'isAuthenticated': true,
-      'token': payload.id,
-      'userName': payload.user.fullName,
       'statusText': 'You have been successfully logged in.'
     })
   },
@@ -190,16 +184,12 @@ export default handleActions({
     return Object.assign({}, state, {
       'isAuthenticating': false,
       'isAuthenticated': false,
-      'token': null,
-      'userName': null,
       'statusText': `Authentication Error: ${payload.status} ${payload.statusText}`
     })
   },
-  [AUTH_LOGOUT_SUCCESS]: (state, payload) => {
+  [AUTH_LOGOUT_SUCCESS]: (state, {payload}) => {
     return Object.assign({}, state, {
       'isAuthenticated': false,
-      'token': null,
-      'userName': null,
       'statusText': 'You have been successfully logged out.'
     })
   },
@@ -209,7 +199,7 @@ export default handleActions({
       'statusText': null
     })
   },
-  [AUTH_SIGNUP_SUCCESS]: (state, payload) => {
+  [AUTH_SIGNUP_SUCCESS]: (state, {payload}) => {
     return Object.assign({}, state, {
       'isAuthenticating': false,
       'isAuthenticated': false,

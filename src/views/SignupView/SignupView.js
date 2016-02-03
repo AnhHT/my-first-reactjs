@@ -15,11 +15,13 @@ const mapStateToProps = (state) => ({
 
 const form = reduxForm({
   form: 'login',
-  fields: ['email', 'password'],
+  fields: ['email', 'password', 'fullName', 'dob', 'pin'],
   validate (state) {
     const errors = {}
     if (!state.email) {
       errors.email = 'Email is required'
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(state.email)) {
+      errors.email = 'Invalid email address'
     }
 
     if (!state.password) {
@@ -36,7 +38,9 @@ export class SignupView extends Component {
      signup: PropTypes.func.isRequired,
      isAuthenticating: PropTypes.bool,
      statusText: PropTypes.string,
-     location: PropTypes.object
+     fields: PropTypes.object.isRequired,
+     location: PropTypes.object,
+     valid: PropTypes.bool
    };
 
    constructor (props) {
@@ -45,13 +49,18 @@ export class SignupView extends Component {
      this.state = {
        email: '',
        password: '',
+       fullName: '',
+       dob: '',
+       pin: '',
        redirectTo: redirectRoute
      }
    }
 
   handleSubmit (evt) {
     evt.preventDefault()
-    this.props.signup({email: this.state.email, password: this.state.password, redirectTo: this.state.redirectTo})
+    if (this.props.valid) {
+      this.props.signup(this.state)
+    }
   }
 
   handleChange (e) {
@@ -59,6 +68,7 @@ export class SignupView extends Component {
   }
 
   render () {
+    const {fields: {email, password, fullName, dob, pin}} = this.props
     return (
       <div className={classes.container}>
         <h1>Signup</h1>
@@ -67,8 +77,11 @@ export class SignupView extends Component {
             onSubmit={::this.handleSubmit}
             onChange={::this.handleChange}>
             {this.props.statusText ? <div>{this.props.statusText}</div> : ''}
-            <Input type='text' label='Email' name='email' />
-            <Input type='password' label='Password' name='password' />
+            <Input type='text' label='Email' {...email} />
+            <Input type='password' label='Password' {...password} />
+            <Input type='text' label='Full Name' {...fullName} />
+            <Input type='text' label='Date of birth' {...dob} />
+            <Input type='number' label='PIN' {...pin} maxLength={4} />
             <Button raised primary>
               Signup
             </Button>

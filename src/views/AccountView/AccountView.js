@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component, PropTypes} from 'react'
 // import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import classes from './AccountView.scss'
@@ -11,21 +11,17 @@ const mapStateToProps = (state) => ({
   statusText: state.auth.statusText
 })
 
-export class AccountView extends React.Component {
+export class AccountView extends Component {
 
   static propTypes = {
-    token: React.PropTypes.string,
-    isFetching: React.PropTypes.bool,
-    data: React.PropTypes.Object,
-    getUsers: React.PropTypes.func,
-    logoutAndRedirect: React.PropTypes.func
+    token: PropTypes.string,
+    isFetching: PropTypes.bool,
+    data: PropTypes.object,
+    getUsers: PropTypes.func,
+    logoutAndRedirect: PropTypes.func
   };
 
   componentWillMount () {
-    this.fetchData()
-  }
-
-  fetchData () {
     this.props.getUsers()
   }
 
@@ -38,8 +34,9 @@ export class AccountView extends React.Component {
     return (
       <div className={classes.container}>
         <h1>Account</h1>
-        <p>Welcome to your account.</p>
-        <h4>{this.props.data.user.fullName} - {this.props.data.user.email}</h4>
+        {
+          !this.props.isFetching ? <h4>{this.props.data.user.fullName} - {this.props.data.user.email}</h4> : <h4>Waiting...</h4>
+        }
       </div>
     )
   }

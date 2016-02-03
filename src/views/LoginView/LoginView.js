@@ -16,10 +16,13 @@ const mapStateToProps = (state) => ({
 const form = reduxForm({
   form: 'loginForm',
   fields: ['email', 'password'],
+  touchOnChange: true,
   validate (state) {
     let errors = {}
     if (!state.email) {
       errors.email = 'Email is required'
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(state.email)) {
+      errors.email = 'Invalid email address'
     }
 
     if (!state.password) {
@@ -37,8 +40,9 @@ class LoginView extends Component {
      isAuthenticating: PropTypes.bool,
      statusText: PropTypes.string,
      location: PropTypes.object,
-     initializeForm: PropTypes.func,
-     dispatch: PropTypes.func.isRequired
+     fields: PropTypes.object.isRequired,
+     dispatch: PropTypes.func.isRequired,
+     valid: PropTypes.bool
    };
 
    constructor (props) {
@@ -51,16 +55,11 @@ class LoginView extends Component {
      }
    }
 
-  componentWillMount () {
-    this.props.initializeForm({
-      email: null,
-      password: null
-    })
-  }
-
   handleSubmit (evt) {
     evt.preventDefault()
-    this.props.login({email: this.state.email, password: this.state.password, redirectTo: this.state.redirectTo})
+    if (this.props.valid) {
+      this.props.login(this.state)
+    }
   }
 
   handleChange (e) {
@@ -73,6 +72,7 @@ class LoginView extends Component {
   }
 
   render () {
+    const {fields: {email, password}} = this.props
     return (
       <div className={classes.container}>
         <h1>Login</h1>
@@ -81,8 +81,8 @@ class LoginView extends Component {
             onSubmit={::this.handleSubmit}
             onChange={::this.handleChange}>
             {this.props.statusText ? <div>{this.props.statusText}</div> : ''}
-            <Input type='text' label='Email' name='email' />
-            <Input type='password' label='Password' name='password' />
+            <Input type='text' label='Email' {...email} />
+            <Input type='password' label='Password' {...password} />
             <Button label='Login' raised primary />
             <Button label='Register' raised accent onClick={::this.handleRegister} />
           </form>
