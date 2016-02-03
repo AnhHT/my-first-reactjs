@@ -15,6 +15,7 @@ import AboutView from 'views/AboutView/AboutView'
 import LoginView from 'views/LoginView/LoginView'
 import SignupView from 'views/SignupView/SignupView'
 import AccountView from 'views/AccountView/AccountView'
+import RequestView from 'views/RequestView/RequestView'
 
 export default (
 <Route>
@@ -22,6 +23,7 @@ export default (
     <IndexRoute component={requireAuthentication(HomeView)} />
     <Route path='/about' component={AboutView} />
     <Route path='/account' component={requireAuthentication(AccountView)} />
+    <Route path='/request' component={requireAuthentication(RequestView)} />
   </Route>
   <Route path='/auth' component={AuthLayout}>
 	<Route path='/login' component={LoginView} />
