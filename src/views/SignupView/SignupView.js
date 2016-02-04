@@ -73,11 +73,11 @@ export class SignupView extends Component {
   }
 
   dateChange (item, value) {
-    this.setState({...this.state, [item]: value })
+    this.setState({ ...this.state, [item]: value })
   }
 
   render () {
-    const {fields: {email, password, fullName, dob, pin}} = this.props
+    const {fields: {email, password, fullName, pin}} = this.props
     return (
       <div className={classes.container}>
         <h1>Signup</h1>
