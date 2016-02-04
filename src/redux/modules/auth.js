@@ -63,7 +63,7 @@ export function login (data = {email: '', password: '', redirect: '/'}) {
   return (dispatch, getState) => {
     // Login remote
     dispatch(loginRequest(data))
-    return fetch('http://pn.quandh.com:80/api/users/login?include=user', {
+    return fetch('//pn.quandh.com:80/api/users/login?include=user', {
       method: 'post',
       headers: {
         'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
@@ -110,7 +110,7 @@ export function signup (data = {email: '', password: '', redirect: '/'}) {
   return (dispatch, getState) => {
     window.localStorage.removeItem('userInfo')
     dispatch(signupRequest(data))
-    return fetch('http://pn.quandh.com:80/api/users', {
+    return fetch('//pn.quandh.com:80/api/users', {
       method: 'post',
       headers: {
         'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
