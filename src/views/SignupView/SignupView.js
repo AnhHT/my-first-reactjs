@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react'
 import { connect } from 'react-redux'
 import Button from 'react-toolbox/lib/button'
 import Input from 'react-toolbox/lib/input'
+import DatePicker from 'react-toolbox/lib/date_picker'
 import { actions as authActions } from '../../redux/modules/auth'
 import { reduxForm } from 'redux-form'
 import classes from './SignupView.scss'
@@ -26,6 +27,12 @@ const form = reduxForm({
       errors.password = 'Password is required'
     }
 
+    if (!state.pin) {
+      errors.pin = 'PIN is required'
+    } else if (!/^[0-9]{4}$/i.test(state.pin)) {
+      errors.pin = 'Use number only.'
+    }
+
     return errors
   }
 })
@@ -48,7 +55,7 @@ export class SignupView extends Component {
        email: '',
        password: '',
        fullName: '',
-       dob: '',
+       dob: new Date(),
        pin: '',
        redirectTo: redirectRoute
      }
@@ -65,6 +72,10 @@ export class SignupView extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
+  dateChange (item, value) {
+    this.setState({...this.state, [item]: value })
+  }
+
   render () {
     const {fields: {email, password, fullName, dob, pin}} = this.props
     return (
@@ -78,8 +89,8 @@ export class SignupView extends Component {
             <Input type='text' label='Email' {...email} />
             <Input type='password' label='Password' {...password} />
             <Input type='text' label='Full Name' {...fullName} />
-            <Input type='text' label='Date of birth' {...dob} />
-            <Input type='number' label='PIN' {...pin} maxLength={4} />
+            <DatePicker label='Birthdate' onChange={this.dateChange.bind(this, 'dob')} value={this.state.dob} name='dob' />
+            <Input type='password' label='PIN' {...pin} maxLength={4} />
             <Button raised primary>
               Signup
             </Button>
