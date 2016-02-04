@@ -1,15 +1,9 @@
 import { createAction, handleActions } from 'redux-actions'
 // import { propertySelector } from '../utils/reselect'
 import Immutable from 'immutable'
-// import jwtDecode from 'jwt-decode'
 import { push } from 'react-router-redux'
-// import * as promise from 'es6-promise'
-// promise.polyfill()
 import fetch from 'isomorphic-fetch'
 
-// ------------------------------------
-// Constants
-// ------------------------------------
 export const AUTH_LOGIN_REQUEST = 'AUTH_LOGIN_REQUEST'
 export const AUTH_LOGIN_SUCCESS = 'AUTH_LOGIN_SUCCESS'
 export const AUTH_LOGIN_FAILURE = 'AUTH_LOGIN_FAILURE'
@@ -23,9 +17,6 @@ export const FETCH_USERS_DATA_REQUEST = 'FETCH_USERS_DATA_REQUEST'
 export const RECEIVE_USERS_DATA_SUCCESS = 'RECEIVE_USERS_DATA_SUCCESS'
 export const RECEIVE_USERS_DATA_FAILURE = 'RECEIVE_USERS_DATA_FAILURE'
 
-// ------------------------------------
-// Actions
-// ------------------------------------
 export const loginRequest = createAction(AUTH_LOGIN_REQUEST, (data) => data)
 export const loginSuccess = createAction(AUTH_LOGIN_SUCCESS, (data) => data)
 export const loginFailure = createAction(AUTH_LOGIN_FAILURE, (err) => err)
@@ -163,9 +154,6 @@ export function getUsers () {
   }
 }
 
-// ------------------------------------
-// Reducer
-// ------------------------------------
 export default handleActions({
   [AUTH_LOGIN_REQUEST]: (state, {payload}) => {
     return Object.assign({}, state, {
@@ -234,9 +222,3 @@ export default handleActions({
     })
   }
 }, initialState)
-
-// export const stateKey = 'auth'
-// export const getAuthState = (state) => state[stateKey]
-// export const getAuthError = propertySelector(getAuthState, 'error')
-// export const getAuthToken = propertySelector(getAuthState, 'token')
-// export const isLoggedIn = (state) => !!getAuthToken(state)

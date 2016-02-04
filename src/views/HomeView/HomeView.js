@@ -1,6 +1,7 @@
-import React, { PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
+import {Button} from 'react-toolbox/lib/button'
 import { actions as counterActions } from '../../redux/modules/counter'
 import classes from './HomeView.scss'
 
@@ -12,7 +13,7 @@ import classes from './HomeView.scss'
 const mapStateToProps = (state) => ({
   counter: state.counter
 })
-export class HomeView extends React.Component {
+export class HomeView extends Component {
   static propTypes = {
     counter: PropTypes.number.isRequired,
     doubleAsync: PropTypes.func.isRequired,
@@ -21,22 +22,16 @@ export class HomeView extends React.Component {
 
   render () {
     return (
-      <div className='container text-center'>
+      <div className={classes.container}>
         <h1>Welcome to the React Redux Starter Kit</h1>
         <h2>
           Sample Counter:
           {' '}
           <span className={classes['counter--green']}>{this.props.counter}</span>
         </h2>
-        <button className='btn btn-default'
-                onClick={() => this.props.increment(1)}>
-          Increment
-        </button>
+        <Button raised accent onClick={() => this.props.increment(1)} label='Increment' />
         {' '}
-        <button className='btn btn-default'
-                onClick={this.props.doubleAsync}>
-          Double (Async)
-        </button>
+        <Button raised primary label='Double (Async)' onClick={this.props.doubleAsync}/>
         <hr />
         <Link to='/404'>Go to 404 Page</Link>
       </div>

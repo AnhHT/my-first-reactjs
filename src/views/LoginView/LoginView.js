@@ -84,6 +84,7 @@ class LoginView extends Component {
             <Input type='text' label='Email' {...email} />
             <Input type='password' label='Password' {...password} />
             <Button label='Login' raised primary />
+            {' '}
             <Button label='Register' raised accent onClick={::this.handleRegister} />
           </form>
         </section>
