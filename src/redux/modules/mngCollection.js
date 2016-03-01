@@ -89,21 +89,21 @@ export function getCollection () {
 
 export default handleActions({
   [FETCH_COLLECTION]: (state, { payload }) => {
-    return Object.assign({}, state, {
+    return {...state,
       isFetching: true
-    })
+    }
   },
   [FETCH_COLLECTION_SUCCESS]: (state, { payload }) => {
-    return Object.assign({}, state, {
+    return {...state,
       isFetching: false,
       isFetch: true,
       myCollection: payload
-    })
+    }
   },
   [FETCH_COLLECTION_FAIL]: (state, { payload }) => {
-    return Object.assign({}, state, {
+    return {...state,
       isFetching: false,
       statusText: payload.statusText
-    })
+    }
   }
 }, initialState)
