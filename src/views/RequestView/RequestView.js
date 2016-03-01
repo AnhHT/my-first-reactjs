@@ -31,7 +31,7 @@ export class RequestView extends Component {
         <ul className={classes.mtHighMedium}>
         {
           this.props.isFetch ? this.props.data.value.map(item =>
-              <li className={classes.collectionLocalBizsItem} style={{ backgroundImage: 'url(http://www.cityme.asia'+item.imageUrl+')' }} key={item.linkTo}>
+              <li className={classes.collectionLocalBizsItem} style={{ backgroundImage: 'url(http://www.cityme.asia' + item.imageUrl + ')' }} key={item.linkTo}>
                 <a className={classes.collectionLocalBizsLink} href={baseUrl + item.linkTo}>
                   <div>
                     <div className={classes.collectionLocalBizsTitle}>
