@@ -24,14 +24,14 @@ export class RequestView extends Component {
   }
 
   render () {
-    let baseUrl = 'http://www.cityme.asia/'
+    let baseUrl = 'http://www.cityme.asia'
     return (
       <div className={classes.container}>
         <h1>Bộ sưu tập</h1>
         <ul className={classes.mtHighMedium}>
         {
           this.props.isFetch ? this.props.data.value.map(item =>
-              <li className={classes.collectionLocalBizsItem} style={{ backgroundImage: 'url(http://www.cityme.asia' + item.imageUrl + ')' }} key={item.linkTo}>
+              <li className={classes.collectionLocalBizsItem} style={{ backgroundImage: 'url(' + baseUrl + item.imageUrl + ')' }} key={item.linkTo}>
                 <a className={classes.collectionLocalBizsLink} href={baseUrl + item.linkTo}>
                   <div>
                     <div className={classes.collectionLocalBizsTitle}>
