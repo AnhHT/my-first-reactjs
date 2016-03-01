@@ -3,34 +3,42 @@
 	{
 		"selected_items":
 		[
+			[
+				"cl",
+				"classes"
+			],
+			[
+				"cla",
+				"classes"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"get",
+				"getCollection"
+			],
+			[
+				"st",
+				"statusText"
+			],
+			[
+				"isF",
+				"isFetch"
+			],
+			[
+				"FET",
+				"FETCH_COLLECTION_SUCCESS"
+			],
+			[
+				"p",
+				"payload"
+			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "src/redux/modules/mngCollection.js",
-			"settings":
-			{
-				"buffer_size": 1212,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/redux/modules/auth.js",
-			"settings":
-			{
-				"buffer_size": 7110,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/redux/modules/counter.js",
-			"settings":
-			{
-				"buffer_size": 1173,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -67,23 +75,39 @@
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/components",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/components/AppBar",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/components/Authentication",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/components/Footer",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/components/Navigation",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/layouts",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/layouts/AuthLayout",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/layouts/CoreLayout",
-		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/redux",
-		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/redux/modules",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/AboutView",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/AccountView",
-		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/HomeView"
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/HomeView",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/LoginView",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/RequestView"
 	],
 	"file_history":
 	[
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/components/Navigation/index.js",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/views/partials/header.ejs",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/views/pages/index.ejs",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/dist/index.html",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/dist/vendor.519f18b5c58d251167b1.js",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/RequestView/RequestView.scss",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/RequestView/RequestView.js",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/redux/modules/mngCollection.js",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/redux/rootReducer.js",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/redux/modules/auth.js",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/redux/configureStore.js",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/LoginView/LoginView.js",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/AccountView/AccountView.js",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/HomeView/HomeView.js",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/redux/modules/counter.js",
 		"/C/Users/AnhHoang/AndroidStudioProjects/android-samples/ApiDemos/app/src/main/java/com/example/mapdemo/MarkerDemoActivity.java",
 		"/C/Users/AnhHoang/AndroidStudioProjects/android-samples/ApiDemos/app/src/main/res/layout/marker_demo.xml",
-		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/redux/modules/counter.js",
-		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/redux/modules/auth.js",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/redux/modules/notification.js",
 		"/C/Users/AnhHoang/Source/Workspaces/snowflake/src/lib/Parse.js",
 		"/C/Users/AnhHoang/Source/Workspaces/snowflake/src/lib/Hapi.js",
@@ -95,7 +119,6 @@
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/README.md",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/index.js",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/app.json",
-		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/views/pages/index.ejs",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/hello-world/server/server.js",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/hello-world/package.json",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/hello-world/server/config.json",
@@ -105,7 +128,6 @@
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/hello-world/.jshintrc",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/hello-world/.yo-rc.json",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/hello-world/.editorconfig",
-		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/views/partials/header.ejs",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/views/partials/nav.ejs",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/views/pages/index_backup.ejs",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/views/apps/index.html",
@@ -120,9 +142,7 @@
 		"/C/Users/AnhHoang/Source/Workspaces/HRMS/hrms/WebApp/src/routes/index.js",
 		"/C/Users/AnhHoang/Source/Workspaces/HRMS/hrms/WebApp/src/containers/Root.js",
 		"/C/Users/AnhHoang/Source/Workspaces/HRMS/hrms/WebApp/src/redux/configureStore.js",
-		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/redux/rootReducer.js",
 		"/C/Users/AnhHoang/Source/Workspaces/HRMS/hrms/WebApp/src/redux/rootReducer.js",
-		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/HomeView/HomeView.js",
 		"/C/Users/AnhHoang/Source/Workspaces/HRMS/hrms/WebApp/src/redux/modules/auth.js",
 		"/C/Users/AnhHoang/Downloads/DisplayingBitmaps/Application/src/main/java/com/example/android/displayingbitmaps/provider/Images.java",
 		"/C/Users/AnhHoang/AndroidStudioProjects/loopback-example/LoopbackGuideApplication/src/com/strongloop/android/loopback/guide/lessons/LessonThreeFragment.java",
@@ -154,6 +174,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"getCollectionRequest",
+			"FETCH_COLLECTION",
+			"FETCH_COLLECTION_SUCCESS",
+			"getCollectionSuccess",
+			"authActions",
+			")\n",
+			"loginRequest",
 			"pn.quandh"
 		],
 		"highlight": true,
@@ -172,95 +199,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "src/redux/modules/mngCollection.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1212,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1212,
-								1212
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/redux/modules/auth.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7110,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5799,
-								5799
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1209.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/redux/modules/counter.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1173,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1173,
-								1073
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],
