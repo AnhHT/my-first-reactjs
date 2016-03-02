@@ -1,8 +1,8 @@
 .mtHighMedium {
     margin-top: 20px;
     fill: #474747;
-    width:200px;
-    float:left;
+    width: 250px;
+    float: left;
 }
 
 ol, ul {
@@ -12,6 +12,23 @@ ol, ul {
 
 ol li, ul li {
     list-style-type: none;
+}
+
+ul.mtHighMedium > li {
+    position: relative;
+    height: 100px;
+}
+
+ul.mtHighMedium > li > .editButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+ul.mtHighMedium > li > .deleteButton {
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 .container {
@@ -41,7 +58,7 @@ ol li, ul li {
     -ms-flex-align: center;
     align-items: center;
     padding-left: 10px;
-    height: 70px;
+    height: 100px;
 }
 
 .collectionLocalBizsTitle {

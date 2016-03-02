@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"pro",
+				"props"
+			],
+			[
+				"c",
+				"console"
+			],
+			[
+				"class",
+				"classes"
+			],
+			[
+				"cla",
+				"className"
+			],
+			[
+				"onCl",
+				"onClearForm"
+			],
+			[
+				"is",
+				"isRequired"
+			],
+			[
 				"stat",
 				"statusText"
 			],
@@ -32,14 +56,6 @@
 				"classes"
 			],
 			[
-				"cla",
-				"classes"
-			],
-			[
-				"class",
-				"className"
-			],
-			[
 				"get",
 				"getCollection"
 			],
@@ -60,26 +76,10 @@
 	"buffers":
 	[
 		{
-			"file": "src/redux/modules/mngCollection.js",
-			"settings":
-			{
-				"buffer_size": 3554,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "src/views/RequestView/RequestView.js",
 			"settings":
 			{
-				"buffer_size": 3154,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/views/SignupView/SignupView.js",
-			"settings":
-			{
-				"buffer_size": 2961,
+				"buffer_size": 4572,
 				"line_ending": "Windows"
 			}
 		}
@@ -140,6 +140,7 @@
 	"file_history":
 	[
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/RequestView/RequestView.scss",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/redux/modules/mngCollection.js",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/public/app.1a07e0a87776623e302d.js",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/views/pages/index.ejs",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/index.js",
@@ -150,7 +151,6 @@
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/dist/index.html",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/dist/vendor.519f18b5c58d251167b1.js",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/RequestView/RequestView.js",
-		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/redux/modules/mngCollection.js",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/redux/rootReducer.js",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/redux/modules/auth.js",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/redux/configureStore.js",
@@ -209,7 +209,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -223,6 +223,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"onEditHandle",
+			"onRemoveHandle",
+			"fields",
 			"www.cityme.asia",
 			"http://www.cityme.asia/",
 			"getCollectionRequest",
@@ -240,6 +243,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"onAddHandle"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -255,71 +259,11 @@
 			[
 				{
 					"buffer": 0,
-					"file": "src/redux/modules/mngCollection.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3554,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1785,
-								1785
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 383.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "src/views/RequestView/RequestView.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3154,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1197,
-								1197
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 495.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/views/SignupView/SignupView.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2961,
+						"buffer_size": 4572,
 						"regions":
 						{
 						},
@@ -327,7 +271,7 @@
 						[
 							[
 								2277,
-								2204
+								2277
 							]
 						],
 						"settings":
@@ -336,11 +280,11 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
-						"translation.y": 495.0,
+						"translation.x": 0.0,
+						"translation.y": 787.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -385,7 +329,7 @@
 	"project": "my-reactjs.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
