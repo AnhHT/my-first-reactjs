@@ -90,7 +90,8 @@ export function getCollection () {
 export default handleActions({
   [FETCH_COLLECTION]: (state, { payload }) => {
     return {...state,
-      isFetching: true
+      isFetching: true,
+      isFetch: false
     }
   },
   [FETCH_COLLECTION_SUCCESS]: (state, { payload }) => {
@@ -103,6 +104,23 @@ export default handleActions({
   [FETCH_COLLECTION_FAIL]: (state, { payload }) => {
     return {...state,
       isFetching: false,
+      statusText: payload.statusText
+    }
+  },
+  [ADD_COLLECTION]: (state, {payload}) => {
+    return {...state,
+      isAdding: true
+    }
+  },
+  [ADD_COLLECTION_SUCCESS]: (state, {payload}) => {
+    return {...state,
+      isAdding: false,
+      isAdded: true
+    }
+  },
+  [ADD_COLLECTION_FAIL]: (state, {payload}) => {
+    return {...state,
+      isAdding: false,
       statusText: payload.statusText
     }
   }

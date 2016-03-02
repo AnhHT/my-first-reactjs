@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"stat",
+				"statusText"
+			],
+			[
+				"isFe",
+				"isFetch"
+			],
+			[
+				"isAdd",
+				"isAdded"
+			],
+			[
+				"Ad",
+				"ADD_COLLECTION_SUCCESS"
+			],
+			[
+				"st",
+				"state"
+			],
+			[
+				"im",
+				"imageUrl"
+			],
+			[
 				"cl",
 				"classes"
 			],
@@ -18,10 +42,6 @@
 			[
 				"get",
 				"getCollection"
-			],
-			[
-				"st",
-				"statusText"
 			],
 			[
 				"isF",
@@ -43,7 +63,7 @@
 			"file": "src/redux/modules/mngCollection.js",
 			"settings":
 			{
-				"buffer_size": 3164,
+				"buffer_size": 3554,
 				"line_ending": "Windows"
 			}
 		},
@@ -51,7 +71,15 @@
 			"file": "src/views/RequestView/RequestView.js",
 			"settings":
 			{
-				"buffer_size": 1763,
+				"buffer_size": 3154,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/views/SignupView/SignupView.js",
+			"settings":
+			{
+				"buffer_size": 2961,
 				"line_ending": "Windows"
 			}
 		}
@@ -106,16 +134,17 @@
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/HomeView",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/LoginView",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/NotFoundView",
-		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/RequestView"
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/RequestView",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/SignupView"
 	],
 	"file_history":
 	[
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/RequestView/RequestView.scss",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/public/app.1a07e0a87776623e302d.js",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/views/pages/index.ejs",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/index.js",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/views/partials/nav.ejs",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/views/partials/header.ejs",
-		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/RequestView/RequestView.scss",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/views/apps/index.html",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/components/Navigation/index.js",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/dist/index.html",
@@ -180,7 +209,7 @@
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -221,7 +250,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -230,15 +259,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3164,
+						"buffer_size": 3554,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2831,
-								2831
+								1785,
+								1785
 							]
 						],
 						"settings":
@@ -248,10 +277,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 713.0,
+						"translation.y": 383.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -260,15 +289,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1763,
+						"buffer_size": 3154,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1589,
-								1589
+								1197,
+								1197
 							]
 						],
 						"settings":
@@ -278,10 +307,40 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 495.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/views/SignupView/SignupView.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2961,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2277,
+								2204
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 495.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
