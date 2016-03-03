@@ -46,7 +46,8 @@ export class RequestView extends Component {
     this.state = {
       onEdit: false,
       title: '',
-      imageUrl: ''
+      imageUrl: '',
+      edittingIdx: ''
     }
   }
 
@@ -56,29 +57,38 @@ export class RequestView extends Component {
 
   onAddHandle (e) {
     e.preventDefault()
-    this.setState({onEdit: !this.state.onEdit, title: '', imageUrl: ''})
+    console.log(this.state)
+    this.setState({onEdit: true, title: '', imageUrl: '', edittingIdx: ''})
     this.props.resetForm()
   }
 
   onCancelHandle (e) {
     e.preventDefault()
     if (this.state.onEdit) {
-      this.setState({onEdit: !this.state.onEdit, title: '', imageUrl: ''})
+      this.setState({onEdit: !this.state.onEdit, title: '', imageUrl: '', edittingIdx: ''})
       this.props.resetForm()
     }
   }
 
   onSaveHandle (e) {
     e.preventDefault()
+    console.log(this.state)
     if (this.props.valid) {
-      this.props.data.value = [...this.props.data.value, {title: this.state.title, imageUrl: this.state.imageUrl, linkTo: this.state.imageUrl}]
-      this.setState({onEdit: !this.state.onEdit, title: '', imageUrl: ''})
+      let idx = this.state.edittingIdx
+      if (!idx) {
+        this.props.data.value = [...this.props.data.value, {title: this.state.title, imageUrl: this.state.imageUrl, linkTo: this.state.imageUrl}]
+      } else {
+        this.props.data.value = [...this.props.data.value.slice(0, idx), {title: this.state.title, imageUrl: this.state.imageUrl, linkTo: this.state.imageUrl}, ...this.props.data.value.slice(idx + 1)]
+      }
+
+      this.setState({onEdit: !this.state.onEdit, title: '', imageUrl: '', edittingIdx: ''})
       this.props.resetForm()
     }
   }
 
   onRemoveHandle (e) {
     e.preventDefault()
+    console.log(this.state)
     let idx = e.target.id - 1
     this.props.data.value = [...this.props.data.value.slice(0, idx), ...this.props.data.value.slice(idx + 1)]
     this.props.resetForm()
@@ -86,9 +96,13 @@ export class RequestView extends Component {
 
   onEditHandle (e) {
     e.preventDefault()
+    let idx = e.target.id - 1
+    let currentInfo = this.props.data.value[idx]
+    this.setState({onEdit: true, title: currentInfo.title, imageUrl: currentInfo.imageUrl, edittingIdx: idx})
   }
 
   handleChange (e) {
+    console.log(this.state)
     this.setState({ [e.target.name]: e.target.value })
   }
 
@@ -115,7 +129,7 @@ export class RequestView extends Component {
                     </div>
                   </div>
                 </a>
-                <Button icon='edit' className={classes.editButton} floating primary mini />
+                <Button icon='edit' className={classes.editButton} floating primary mini onClick={::this.onEditHandle} id={nextId}/>
                 <Button icon='remove' className={classes.deleteButton} floating accent mini onClick={::this.onRemoveHandle} id={nextId}/>
               </li>
             ) : <h4>Failed</h4>

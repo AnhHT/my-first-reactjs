@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"sta",
+				"state"
+			],
+			[
+				"f",
+				"fields"
+			],
+			[
+				"ti",
+				"title"
+			],
+			[
+				"iM",
+				"imageUrl"
+			],
+			[
+				"ed",
+				"edittingIdx"
+			],
+			[
 				"pro",
 				"props"
 			],
@@ -76,10 +96,10 @@
 	"buffers":
 	[
 		{
-			"file": "src/views/RequestView/RequestView.js",
+			"file": "/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/views/pages/index.ejs",
 			"settings":
 			{
-				"buffer_size": 4572,
+				"buffer_size": 343,
 				"line_ending": "Windows"
 			}
 		}
@@ -139,9 +159,11 @@
 	],
 	"file_history":
 	[
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/public/app.c1e707bf402c62b8429c.js",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/public/app.1a07e0a87776623e302d.js",
+		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/RequestView/RequestView.js",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/RequestView/RequestView.scss",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/redux/modules/mngCollection.js",
-		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/public/app.1a07e0a87776623e302d.js",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/views/pages/index.ejs",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/index.js",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/views/partials/nav.ejs",
@@ -150,7 +172,6 @@
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/components/Navigation/index.js",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/dist/index.html",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/dist/vendor.519f18b5c58d251167b1.js",
-		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/views/RequestView/RequestView.js",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/redux/rootReducer.js",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/redux/modules/auth.js",
 		"/C/Users/AnhHoang/Source/Workspaces/ReactJS/my-first-reactjs/src/redux/configureStore.js",
@@ -259,29 +280,27 @@
 			[
 				{
 					"buffer": 0,
-					"file": "src/views/RequestView/RequestView.js",
+					"file": "/C/Users/AnhHoang/Source/Workspaces/ReactJS/polar-waters-38100/views/pages/index.ejs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4572,
+						"buffer_size": 343,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2277,
-								2277
+								312,
+								312
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 787.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -329,7 +348,7 @@
 	"project": "my-reactjs.sublime-project",
 	"replace":
 	{
-		"height": 62.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
